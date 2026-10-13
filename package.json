@@ -1,0 +1,33 @@
+{
+  "name": "reviewpilot",
+  "version": "0.1.0",
+  "description": "GitHub App that reviews pull requests with an LLM and posts inline comments",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "dev:worker": "tsx watch src/worker.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node dist/index.js",
+    "start:worker": "node dist/worker.js",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "bullmq": "^6.3.14",
+    "dotenv": "^18.0.7",
+    "express": "^5.3.0",
+    "ioredis": "^6.0.0",
+    "octokit": "^5.0.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
